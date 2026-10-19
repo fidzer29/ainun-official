@@ -1,11 +1,19 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
-export const alt = "Koleksi fashion wanita Ainun Official";
+export const alt =
+  "Koleksi pakaian olahraga syar'i Ainun Official dalam warna hitam, army, dan terracotta";
 export const size = {
   width: 1200,
   height: 630,
 };
 export const contentType = "image/png";
+
+const heroPhoto = await readFile(
+  join(process.cwd(), "public/images/afiyah_set/afiyah.JPG"),
+  "base64",
+);
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -15,100 +23,106 @@ export default function OpenGraphImage() {
           display: "flex",
           width: "100%",
           height: "100%",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "64px 76px",
-          color: "#30231e",
+          alignItems: "stretch",
+          gap: 42,
+          padding: "48px",
+          color: "#2e211c",
           background:
-            "linear-gradient(112deg, #f8f2eb 0%, #ead9ca 58%, #d3b8a4 100%)",
+            "linear-gradient(102deg, #e7d2c4 0%, #f1e5d9 58%, #d7c4b0 100%)",
         }}
       >
         <div
           style={{
             display: "flex",
-            width: "56%",
+            width: "54%",
             flexDirection: "column",
+            justifyContent: "center",
           }}
         >
-          <span
+          <div
             style={{
-              fontSize: 24,
-              letterSpacing: 8,
-              color: "#72574b",
+              display: "flex",
+              width: "auto",
+              alignSelf: "flex-start",
+              borderRadius: 999,
+              padding: "10px 18px",
+              color: "#fff",
+              background: "#60463e",
+              fontSize: 18,
+              fontWeight: 700,
+              letterSpacing: 2,
             }}
           >
             AINUN OFFICIAL
-          </span>
-          <span
+          </div>
+          <div
             style={{
-              marginTop: 36,
-              fontSize: 65,
-              fontWeight: 700,
-              lineHeight: 1.08,
+              display: "flex",
+              flexDirection: "column",
+              marginTop: 30,
+              fontFamily: "Georgia, serif",
+              fontSize: 66,
+              fontWeight: 600,
+              letterSpacing: -2,
+              lineHeight: 1.04,
             }}
           >
-            Koleksi fashion
-            <br />
-            wanita pilihan
-          </span>
-          <span
+            <span>Syar&apos;i Sporty</span>
+            <span>Aktivitas</span>
+            <span>Tanpa Batas</span>
+          </div>
+          <div
             style={{
+              display: "flex",
+              maxWidth: 520,
+              marginTop: 22,
+              color: "#4f4039",
+              fontSize: 24,
+              lineHeight: 1.35,
+            }}
+          >
+            Pakaian olahraga syar&apos;i yang nyaman untuk menemani aktivitasmu.
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
               marginTop: 26,
-              fontSize: 25,
-              color: "#66554c",
+              color: "#60463e",
+              fontSize: 18,
+              fontWeight: 700,
             }}
           >
-            Nyaman, anggun, dan siap menemani harimu.
-          </span>
+            <span style={{ color: "#222", fontSize: 26 }}>●</span>
+            <span>Hitam</span>
+            <span style={{ color: "#66735d", fontSize: 26 }}>●</span>
+            <span>Army</span>
+            <span style={{ color: "#a65d4c", fontSize: 26 }}>●</span>
+            <span>Terracotta</span>
+          </div>
         </div>
         <div
           style={{
             display: "flex",
-            width: 360,
-            height: 420,
-            alignItems: "flex-end",
-            justifyContent: "center",
-            gap: 14,
-            padding: "35px 18px 0",
-            borderRadius: "180px 180px 18px 18px",
-            background:
-              "linear-gradient(160deg, rgba(255,255,255,.72), rgba(158,119,94,.2))",
+            flex: 1,
+            overflow: "hidden",
+            border: "8px solid rgba(255,255,255,.7)",
+            borderRadius: "190px 190px 24px 24px",
+            boxShadow: "0 24px 60px rgba(56,40,36,.18)",
           }}
         >
-          {["#282625", "#344052", "#874d43"].map((color, index) => (
-            <div
-              key={color}
-              style={{
-                display: "flex",
-                width: 90,
-                height: index === 1 ? 355 : 330,
-                flexDirection: "column",
-                alignItems: "center",
-                borderRadius: "46px 46px 10px 10px",
-                background: color,
-              }}
-            >
-              <div
-                style={{
-                  width: 55,
-                  height: 88,
-                  marginTop: -14,
-                  borderRadius: "48% 48% 42% 42%",
-                  background: color,
-                  boxShadow: "inset 0 -24px 0 rgba(183,126,96,.9)",
-                }}
-              />
-              <div
-                style={{
-                  width: 66,
-                  height: 220,
-                  marginTop: 6,
-                  borderRadius: "18px 18px 7px 7px",
-                  background: color,
-                }}
-              />
-            </div>
-          ))}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`data:image/jpeg;base64,${heroPhoto}`}
+            alt=""
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+          />
         </div>
       </div>
     ),

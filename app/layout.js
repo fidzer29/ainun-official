@@ -4,17 +4,18 @@ import { getSiteUrl } from "../lib/site-url";
 export const metadata = {
   metadataBase: getSiteUrl(),
   title: {
-    default: "Ainun Official | Koleksi Fashion Wanita",
+    default: "Ainun Official | Syar'i Sporty untuk Aktivitas Tanpa Batas",
     template: "%s | Ainun Official",
   },
   description:
-    "Temukan koleksi fashion wanita Ainun Official. Lihat detail produk dan pesan langsung melalui WhatsApp atau Shopee.",
+    "Temukan koleksi pakaian olahraga syar'i Ainun Official yang nyaman untuk menemani aktivitasmu. Lihat katalog dan pesan melalui WhatsApp atau Shopee.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Ainun Official | Koleksi Fashion Wanita",
-    description: "Temukan koleksi fashion wanita pilihan dari Ainun Official.",
+    title: "Ainun Official | Syar'i Sporty untuk Aktivitas Tanpa Batas",
+    description:
+      "Koleksi pakaian olahraga syar'i yang nyaman, dengan pilihan warna hitam, army, dan terracotta.",
     type: "website",
     locale: "id_ID",
     siteName: "Ainun Official",
@@ -29,8 +30,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ainun Official | Koleksi Fashion Wanita",
-    description: "Temukan koleksi fashion wanita pilihan dari Ainun Official.",
+    title: "Ainun Official | Syar'i Sporty untuk Aktivitas Tanpa Batas",
+    description:
+      "Koleksi pakaian olahraga syar'i yang nyaman, dengan pilihan warna hitam, army, dan terracotta.",
     images: ["/opengraph-image"],
   },
   robots: {

@@ -22,7 +22,7 @@ export default function HeroSection() {
             <span className="visually-hidden">Koleksi Terbaru</span>
           </span>
           <h1>
-            Syar'i Sporty{" "}
+            Syar&apos;i Sporty{" "}
             <span className="hero-headline-keyword">
               <SplitFlapText text="Aktivitas" />
               <span className="visually-hidden">Aktivitas</span>
