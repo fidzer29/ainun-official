@@ -30,7 +30,7 @@ Buka [http://localhost:3000](http://localhost:3000) untuk melihat katalog.
 
 Tombol detail produk membuka modal berisi deskripsi, harga, warna, dan size chart. Galeri ilustrasi di dalam modal dapat digeser, dinavigasi dengan tombol panah, atau dipilih melalui swatch warna.
 
-Salin `.env.example` menjadi `.env.local` untuk development. Sebelum deploy, atur `NEXT_PUBLIC_SITE_URL` ke origin HTTPS domain resmi, misalnya `https://domain-ainun-yang-dimiliki.com`; production build sengaja gagal bila URL publik belum diatur agar canonical dan sitemap tidak menunjuk ke localhost. Jangan gunakan domain contoh yang bukan milik toko.
+Salin `.env.example` menjadi `.env.local` untuk development. Sebelum deploy, sebaiknya atur `NEXT_PUBLIC_SITE_URL` ke origin HTTPS domain resmi agar canonical dan sitemap memakai domain toko. Di Vercel, jika variabel ini belum diatur, aplikasi memakai `VERCEL_PROJECT_PRODUCTION_URL` yang disediakan platform. Pada platform lain, `NEXT_PUBLIC_SITE_URL` wajib diatur; production build akan gagal daripada menghasilkan canonical atau sitemap yang menunjuk ke localhost.
 
 Visual hero dan katalog memakai gambar lokal di `public/images/`. Pastikan gambar tersebut adalah foto resmi yang sudah disetujui sebelum website dipublikasikan. Detail warna, ukuran, dan harga Naila mengikuti informasi yang tampak pada referensi dan perlu dicocokkan dengan PDF produk final. Tombol WhatsApp memakai tautan umum tanpa nomor toko; tombol Shopee membuka hasil pencarian, bukan halaman toko resmi. Ganti keduanya dengan tautan toko yang benar sebelum peluncuran.
 
